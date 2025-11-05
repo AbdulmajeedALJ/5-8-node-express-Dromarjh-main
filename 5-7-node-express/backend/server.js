@@ -14,7 +14,14 @@ app.listen(PORT, () => {
 app.use(cors());
 
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the Quotes API!");
+});
+
+app.get("/api/quote", (req, res) => {
+    const quote = getRandomQuote();
+    res.json({ quote });
+});
 
 
-{/*write code to create server*/}
 
